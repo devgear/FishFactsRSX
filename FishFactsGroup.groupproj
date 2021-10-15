@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{084DB4EA-9571-428F-8033-BCC9AFDE0C69}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="FishFactsCS\FishFactCS.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="APIServer\FishFactPackage.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="APIClient\FishFactClient.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="FishFactCS">
+        <MSBuild Projects="FishFactsCS\FishFactCS.dproj"/>
+    </Target>
+    <Target Name="FishFactCS:Clean">
+        <MSBuild Projects="FishFactsCS\FishFactCS.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FishFactCS:Make">
+        <MSBuild Projects="FishFactsCS\FishFactCS.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FishFactPackage">
+        <MSBuild Projects="APIServer\FishFactPackage.dproj"/>
+    </Target>
+    <Target Name="FishFactPackage:Clean">
+        <MSBuild Projects="APIServer\FishFactPackage.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FishFactPackage:Make">
+        <MSBuild Projects="APIServer\FishFactPackage.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FishFactClient">
+        <MSBuild Projects="APIClient\FishFactClient.dproj"/>
+    </Target>
+    <Target Name="FishFactClient:Clean">
+        <MSBuild Projects="APIClient\FishFactClient.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FishFactClient:Make">
+        <MSBuild Projects="APIClient\FishFactClient.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="FishFactCS;FishFactPackage;FishFactClient"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="FishFactCS:Clean;FishFactPackage:Clean;FishFactClient:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="FishFactCS:Make;FishFactPackage:Make;FishFactClient:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
