@@ -110,7 +110,6 @@ procedure TdmDatabase.LoadImage(LoadProc: TProc<TMemoryStream>);
 var
   Item: string;
   Stream: TMemoryStream;
-//  WIC: TWICImage;
 begin
   Item := FDMemTable1.FieldByName('species_no').AsString;
 

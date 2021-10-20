@@ -4,6 +4,7 @@ object dmDatabase: TdmDatabase
   Width = 736
   PixelsPerInch = 96
   object qryBioLife: TFDQuery
+    Active = True
     Connection = conFishFact
     SQL.Strings = (
       'SELECT * FROM BIOLIFE')
@@ -16,6 +17,7 @@ object dmDatabase: TdmDatabase
       'User_Name=sysdba'
       'Password=masterkey'
       'DriverID=IB')
+    Connected = True
     LoginPrompt = False
     Left = 85
     Top = 32
@@ -23,7 +25,7 @@ object dmDatabase: TdmDatabase
   object RESTClient1: TRESTClient
     Accept = 'application/json, text/plain; q=0.9, text/html;q=0.8,'
     AcceptCharset = 'utf-8, *;q=0.8'
-    BaseURL = 'http://localhost:8080/fishfact'
+    BaseURL = 'http://localhost:8080/fishfacts'
     Params = <>
     ConnectTimeout = 0
     ReadTimeout = 0

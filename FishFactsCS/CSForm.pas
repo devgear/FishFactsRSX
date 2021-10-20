@@ -27,7 +27,6 @@ type
     Label6: TLabel;
     DBEdit6: TDBEdit;
     Label8: TLabel;
-    DBImage2: TDBImage;
     btnNew: TButton;
     btnSave: TButton;
     btnCancel: TButton;

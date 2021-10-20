@@ -14,7 +14,7 @@ uses
   FireDAC.ConsoleUI.Wait, Data.DB, FireDAC.Comp.Client, FireDAC.Comp.DataSet;
 
 type
-  [ResourceName('fishfact')]
+  [ResourceName('fishfacts')]
   TFishfactResource1 = class(TDataModule)
     [ResourceName('biolifes')]
     EMSDataSetResource1: TEMSDataSetResource;

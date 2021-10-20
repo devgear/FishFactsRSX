@@ -66,7 +66,6 @@ object Form4: TForm4
     Width = 50
     Height = 15
     Caption = 'GRAPHIC'
-    FocusControl = DBImage2
   end
   object DBGrid1: TDBGrid
     Left = 16
@@ -81,6 +80,43 @@ object Form4: TForm4
     TitleFont.Height = -12
     TitleFont.Name = 'Segoe UI'
     TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'SPECIES_NO'
+        Width = 70
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'CATEGORY'
+        Width = 100
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'COMMON_NAME'
+        Width = 180
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'SPECIES_NAME'
+        Width = 240
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'LENGTH'
+        Width = 60
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'LENGTH_IN'
+        Width = 60
+        Visible = True
+      end>
   end
   object DBImage1: TDBImage
     Left = 16
@@ -155,22 +191,13 @@ object Form4: TForm4
     DataSource = DataSource1
     TabOrder = 8
   end
-  object DBImage2: TDBImage
-    Left = 320
-    Top = 704
-    Width = 105
-    Height = 105
-    DataField = 'GRAPHIC'
-    DataSource = DataSource1
-    TabOrder = 9
-  end
   object btnNew: TButton
     Left = 16
     Top = 559
     Width = 75
     Height = 25
     Action = DatasetInsert1
-    TabOrder = 10
+    TabOrder = 9
   end
   object btnSave: TButton
     Left = 430
@@ -178,7 +205,7 @@ object Form4: TForm4
     Width = 75
     Height = 25
     Action = DatasetPost1
-    TabOrder = 11
+    TabOrder = 10
   end
   object btnCancel: TButton
     Left = 511
@@ -186,7 +213,7 @@ object Form4: TForm4
     Width = 75
     Height = 25
     Action = DatasetCancel1
-    TabOrder = 12
+    TabOrder = 11
   end
   object Button1: TButton
     Left = 16
@@ -194,7 +221,7 @@ object Form4: TForm4
     Width = 75
     Height = 25
     Caption = 'Browse'
-    TabOrder = 13
+    TabOrder = 12
     OnClick = Button1Click
   end
   object Button2: TButton
@@ -203,7 +230,7 @@ object Form4: TForm4
     Width = 75
     Height = 25
     Action = DatasetDelete1
-    TabOrder = 14
+    TabOrder = 13
   end
   object DataSource1: TDataSource
     DataSet = dmDatabase.qryBioLife
